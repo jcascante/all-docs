@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Dynamic Training Program Generator API
+  version: 0.1.0
+paths:
+  /program-definitions:
+    get:
+      summary: List ProgramDefinitions
+      responses:
+        '200':
+          description: OK
+  /program-definitions/{program_id}/{version}:
+    get:
+      summary: Get ProgramDefinition
+      parameters:
+      - name: program_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /generate:
+    post:
+      summary: Generate a plan from ProgramDefinition and PlanRequest
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanRequest'
+      responses:
+        '200':
+          description: GeneratedPlan
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeneratedPlan'
+components:
+  schemas:
+    PlanRequest:
+      type: object
+      additionalProperties: true
+    GeneratedPlan:
+      type: object
+      additionalProperties: true
+    ProgramDefinition:
+      type: object
+      additionalProperties: true
