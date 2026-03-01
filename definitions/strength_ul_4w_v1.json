@@ -1,0 +1,579 @@
+{
+  "program_id": "strength_ul_4w_v1",
+  "version": "1.0.0",
+  "name": "UL Strength + Hypertrophy (4 weeks / 4 days)",
+  "description": "Upper/Lower split with main lifts (top set + backoffs) and hypertrophy accessories. Coach-defined parameters, rules, validation and repair.",
+  "parameter_spec": {
+    "fields": [
+      {
+        "key": "athlete.level",
+        "type": "enum",
+        "enum": [
+          "novice",
+          "intermediate",
+          "advanced"
+        ],
+        "required": true
+      },
+      {
+        "key": "athlete.equipment",
+        "type": "string_array",
+        "required": true
+      },
+      {
+        "key": "athlete.restrictions",
+        "type": "string_array",
+        "required": false,
+        "default_expr": "[]"
+      },
+      {
+        "key": "athlete.e1rm.squat",
+        "type": "number",
+        "required": true,
+        "min": 1
+      },
+      {
+        "key": "athlete.e1rm.bench",
+        "type": "number",
+        "required": true,
+        "min": 1
+      },
+      {
+        "key": "athlete.e1rm.deadlift",
+        "type": "number",
+        "required": true,
+        "min": 1
+      },
+      {
+        "key": "athlete.e1rm.ohp",
+        "type": "number",
+        "required": false,
+        "min": 1
+      },
+      {
+        "key": "rules.main_method",
+        "type": "enum",
+        "enum": [
+          "RPE",
+          "PERCENT",
+          "HYBRID"
+        ],
+        "required": true
+      },
+      {
+        "key": "rules.hard_set_rule",
+        "type": "enum",
+        "enum": [
+          "RIR_LE_4",
+          "RPE_GE_6"
+        ],
+        "required": true,
+        "default_expr": "'RIR_LE_4'"
+      },
+      {
+        "key": "rules.accessory_rir_target",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 5,
+        "default_expr": "2"
+      },
+      {
+        "key": "rules.rounding_profile",
+        "type": "enum",
+        "enum": [
+          "none",
+          "plate_2p5kg",
+          "db_2kg"
+        ],
+        "required": true,
+        "default_expr": "'plate_2p5kg'"
+      },
+      {
+        "key": "rules.volume_metric",
+        "type": "enum",
+        "enum": [
+          "hard_sets_weighted",
+          "tonnage",
+          "both"
+        ],
+        "required": true,
+        "default_expr": "'hard_sets_weighted'"
+      },
+      {
+        "key": "rules.allow_optional_ohp",
+        "type": "boolean",
+        "required": true,
+        "default_expr": "true"
+      }
+    ]
+  },
+  "exercise_library_ref": {
+    "type": "file",
+    "path": "data/exercise_library_v1.json"
+  },
+  "template": {
+    "weeks": {
+      "min": 4,
+      "max": 4
+    },
+    "days_per_week": {
+      "min": 4,
+      "max": 4
+    },
+    "sessions": [
+      {
+        "day_index": 1,
+        "tags": [
+          "lower",
+          "strength_focus"
+        ],
+        "optional": false,
+        "blocks": [
+          {
+            "id": "d1_main",
+            "type": "main_lift",
+            "tags": [
+              "squat"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "squat_main"
+              ]
+            },
+            "prescription_ref": "rx_squat_main"
+          },
+          {
+            "id": "d1_second",
+            "type": "secondary_lift",
+            "tags": [
+              "hinge"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "hinge_secondary"
+              ],
+              "prefer_tags": [
+                "barbell"
+              ]
+            },
+            "prescription_ref": "rx_secondary_strength"
+          },
+          {
+            "id": "d1_acc1",
+            "type": "accessory",
+            "tags": [
+              "quads_focus"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "quads_isolation",
+                "quads_accessory"
+              ]
+            },
+            "prescription_ref": "rx_accessory_hyp"
+          },
+          {
+            "id": "d1_acc2",
+            "type": "accessory",
+            "tags": [
+              "core"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "core"
+              ]
+            },
+            "prescription_ref": "rx_accessory_core"
+          }
+        ]
+      },
+      {
+        "day_index": 2,
+        "tags": [
+          "upper",
+          "strength_focus"
+        ],
+        "optional": false,
+        "blocks": [
+          {
+            "id": "d2_main",
+            "type": "main_lift",
+            "tags": [
+              "bench"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "bench_main"
+              ]
+            },
+            "prescription_ref": "rx_bench_main"
+          },
+          {
+            "id": "d2_second",
+            "type": "secondary_lift",
+            "tags": [
+              "horizontal_pull"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "horizontal_pull_secondary",
+                "horizontal_pull_accessory"
+              ],
+              "prefer_tags": [
+                "barbell"
+              ]
+            },
+            "prescription_ref": "rx_secondary_hyp"
+          },
+          {
+            "id": "d2_acc1",
+            "type": "accessory",
+            "tags": [
+              "vertical_pull"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "vertical_pull_accessory",
+                "vertical_pull_secondary"
+              ]
+            },
+            "prescription_ref": "rx_accessory_hyp"
+          },
+          {
+            "id": "d2_acc2",
+            "type": "accessory",
+            "tags": [
+              "delts_lateral"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "delts_lateral"
+              ]
+            },
+            "prescription_ref": "rx_accessory_delts"
+          }
+        ]
+      },
+      {
+        "day_index": 3,
+        "tags": [
+          "lower",
+          "strength_focus"
+        ],
+        "optional": false,
+        "blocks": [
+          {
+            "id": "d3_main",
+            "type": "main_lift",
+            "tags": [
+              "hinge"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "hinge_main"
+              ]
+            },
+            "prescription_ref": "rx_deadlift_main"
+          },
+          {
+            "id": "d3_second",
+            "type": "secondary_lift",
+            "tags": [
+              "squat"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "squat_secondary"
+              ]
+            },
+            "prescription_ref": "rx_secondary_strength"
+          },
+          {
+            "id": "d3_acc1",
+            "type": "accessory",
+            "tags": [
+              "hamstrings_focus"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "hamstrings_isolation",
+                "hamstrings_accessory"
+              ]
+            },
+            "prescription_ref": "rx_accessory_hyp"
+          },
+          {
+            "id": "d3_acc2",
+            "type": "accessory",
+            "tags": [
+              "calves_focus"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "calves_focus",
+                "calves_isolation"
+              ]
+            },
+            "prescription_ref": "rx_accessory_hyp"
+          }
+        ]
+      },
+      {
+        "day_index": 4,
+        "tags": [
+          "upper",
+          "volume_focus"
+        ],
+        "optional": false,
+        "blocks": [
+          {
+            "id": "d4_main",
+            "type": "main_lift",
+            "tags": [
+              "vertical_push"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "ohp_main",
+                "ohp_secondary"
+              ],
+              "prefer_tags": [
+                "barbell"
+              ]
+            },
+            "prescription_ref": "rx_ohp_main_optional",
+            "constraints": {
+              "block_fatigue_cap_expr": "4.0"
+            }
+          },
+          {
+            "id": "d4_second",
+            "type": "secondary_lift",
+            "tags": [
+              "bench"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "bench_secondary",
+                "press_secondary"
+              ]
+            },
+            "prescription_ref": "rx_secondary_hyp"
+          },
+          {
+            "id": "d4_acc1",
+            "type": "accessory",
+            "tags": [
+              "horizontal_pull"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "horizontal_pull_accessory",
+                "horizontal_pull_secondary"
+              ]
+            },
+            "prescription_ref": "rx_accessory_hyp"
+          },
+          {
+            "id": "d4_acc2",
+            "type": "accessory",
+            "tags": [
+              "arms"
+            ],
+            "exercise_selector": {
+              "count": 2,
+              "include_tags": [
+                "biceps",
+                "triceps"
+              ]
+            },
+            "prescription_ref": "rx_accessory_arms"
+          }
+        ]
+      }
+    ]
+  },
+  "prescriptions": {
+    "rx_squat_main": {
+      "mode": "top_set_plus_backoff",
+      "output_mapping": {
+        "reps_expr": "choose(ctx.week,[5,5,3,5])",
+        "target_rpe_expr": "choose(ctx.week,[7,8,8.5,6])",
+        "backoff_sets_expr": "choose(ctx.week,[3,3,4,2])",
+        "backoff_reps_expr": "choose(ctx.week,[5,5,3,5])",
+        "backoff_load_factor_expr": "0.90"
+      }
+    },
+    "rx_bench_main": {
+      "mode": "top_set_plus_backoff",
+      "output_mapping": {
+        "reps_expr": "choose(ctx.week,[6,5,4,6])",
+        "target_rpe_expr": "choose(ctx.week,[7,8,8.5,6])",
+        "backoff_sets_expr": "choose(ctx.week,[3,4,4,2])",
+        "backoff_reps_expr": "choose(ctx.week,[6,5,4,6])",
+        "backoff_load_factor_expr": "0.90"
+      }
+    },
+    "rx_deadlift_main": {
+      "mode": "top_set_plus_backoff",
+      "output_mapping": {
+        "reps_expr": "choose(ctx.week,[4,4,2,4])",
+        "target_rpe_expr": "choose(ctx.week,[7,8,8.5,6])",
+        "backoff_sets_expr": "choose(ctx.week,[2,3,4,1])",
+        "backoff_reps_expr": "choose(ctx.week,[4,4,2,4])",
+        "backoff_load_factor_expr": "0.88"
+      }
+    },
+    "rx_ohp_main_optional": {
+      "mode": "conditional_block",
+      "variables": {
+        "enabled_expr": "ctx.rules.allow_optional_ohp == true"
+      },
+      "output_mapping": {
+        "reps_expr": "choose(ctx.week,[5,5,3,5])",
+        "target_rpe_expr": "choose(ctx.week,[7,8,8.5,6])",
+        "backoff_sets_expr": "choose(ctx.week,[2,3,3,1])",
+        "backoff_reps_expr": "choose(ctx.week,[5,5,3,5])",
+        "backoff_load_factor_expr": "0.90"
+      }
+    },
+    "rx_secondary_strength": {
+      "mode": "reps_range_rir",
+      "output_mapping": {
+        "sets_expr": "choose(ctx.week,[3,3,4,2])",
+        "reps_min_expr": "5",
+        "reps_max_expr": "8",
+        "target_rir_expr": "2"
+      }
+    },
+    "rx_secondary_hyp": {
+      "mode": "reps_range_rir",
+      "output_mapping": {
+        "sets_expr": "choose(ctx.week,[3,4,4,2])",
+        "reps_min_expr": "8",
+        "reps_max_expr": "12",
+        "target_rir_expr": "ctx.rules.accessory_rir_target"
+      }
+    },
+    "rx_accessory_hyp": {
+      "mode": "reps_range_rir",
+      "output_mapping": {
+        "sets_expr": "choose(ctx.week,[3,3,4,2])",
+        "reps_min_expr": "10",
+        "reps_max_expr": "15",
+        "target_rir_expr": "ctx.rules.accessory_rir_target"
+      }
+    },
+    "rx_accessory_delts": {
+      "mode": "reps_range_rir",
+      "output_mapping": {
+        "sets_expr": "choose(ctx.week,[3,3,4,2])",
+        "reps_min_expr": "12",
+        "reps_max_expr": "20",
+        "target_rir_expr": "ctx.rules.accessory_rir_target"
+      }
+    },
+    "rx_accessory_core": {
+      "mode": "reps_range_rir",
+      "output_mapping": {
+        "sets_expr": "3",
+        "reps_min_expr": "10",
+        "reps_max_expr": "15",
+        "target_rir_expr": "3"
+      }
+    },
+    "rx_accessory_arms": {
+      "mode": "reps_range_rir_multi",
+      "variables": {
+        "per_exercise_sets_expr": "choose(ctx.week,[2,2,3,1])",
+        "reps_min_expr": "10",
+        "reps_max_expr": "15",
+        "target_rir_expr": "ctx.rules.accessory_rir_target"
+      },
+      "output_mapping": {}
+    }
+  },
+  "rules": {
+    "expression_language": "v1",
+    "rounding_profiles": {
+      "none": {
+        "type": "none"
+      },
+      "plate_2p5kg": {
+        "type": "plate",
+        "increment_kg": 2.5
+      },
+      "db_2kg": {
+        "type": "dumbbell",
+        "increment_kg": 2.0
+      }
+    },
+    "defaults": {
+      "rounding_profile_key_expr": "ctx.rules.rounding_profile",
+      "volume_metric_expr": "ctx.rules.volume_metric"
+    },
+    "selection": {
+      "respect_equipment": true,
+      "respect_contraindications": true,
+      "avoid_same_exercise_within_days": 2,
+      "avoid_same_swap_group_within_days": 2
+    },
+    "fatigue_model": {
+      "per_set_expr": "exercise.fatigue_cost * intensity_factor"
+    }
+  },
+  "validation": {
+    "hard": {
+      "max_weekly_volume_by_key": {
+        "key_expr": "muscle",
+        "limit_expr": "choose(ctx.athlete.level, {'novice':16,'intermediate':20,'advanced':24})"
+      },
+      "min_weekly_volume_by_key": {
+        "key_expr": "pattern",
+        "limit_expr": "choose(pattern, {'vertical_pull':4,'horizontal_pull':6})"
+      },
+      "max_fatigue_per_session_expr": "10",
+      "max_fatigue_per_week_expr": "38"
+    },
+    "soft": {
+      "warnings": [
+        {
+          "if_expr": "ctx.plan.weekly_volume.pattern.vertical_pull < 4",
+          "message": "Vertical pull volume is below recommended minimum."
+        },
+        {
+          "if_expr": "ctx.plan.weekly_volume.pattern.horizontal_pull < 6",
+          "message": "Horizontal pull volume is below recommended minimum."
+        }
+      ]
+    },
+    "repair": {
+      "strategy_order": [
+        "reduce_accessory_sets",
+        "swap_to_lower_fatigue_variant",
+        "reduce_backoff_sets",
+        "drop_optional_blocks"
+      ],
+      "limits": {
+        "max_repairs_per_session": 10,
+        "max_repairs_per_plan": 50
+      }
+    }
+  }
+}

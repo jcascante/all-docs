@@ -1,0 +1,462 @@
+{
+  "program_id": "conditioning_4w_v1",
+  "version": "1.0.0",
+  "name": "Conditioning Engine (4 weeks / 3-5 days)",
+  "description": "Aerobic base + threshold + VO2 optional. Supports HRR Karvonen (default), %HRmax, PACE (1km & 5km), POWER and RPE.",
+  "parameter_spec": {
+    "fields": [
+      {
+        "key": "athlete.level",
+        "type": "enum",
+        "enum": [
+          "novice",
+          "intermediate",
+          "advanced"
+        ],
+        "required": true
+      },
+      {
+        "key": "athlete.time_budget_minutes",
+        "type": "number",
+        "required": false,
+        "min": 20,
+        "max": 120,
+        "default_expr": "60"
+      },
+      {
+        "key": "athlete.modality",
+        "type": "enum",
+        "enum": [
+          "run",
+          "row",
+          "bike",
+          "mixed"
+        ],
+        "required": true
+      },
+      {
+        "key": "athlete.equipment",
+        "type": "string_array",
+        "required": true
+      },
+      {
+        "key": "conditioning.method",
+        "type": "enum",
+        "enum": [
+          "HR_ZONES",
+          "PACE",
+          "POWER",
+          "RPE"
+        ],
+        "required": true
+      },
+      {
+        "key": "conditioning.hr_zone_formula",
+        "type": "enum",
+        "enum": [
+          "KARVONEN_HRR",
+          "PERCENT_HRMAX"
+        ],
+        "required": true,
+        "default_expr": "'KARVONEN_HRR'"
+      },
+      {
+        "key": "conditioning.hr_max",
+        "type": "number",
+        "required_if": "ctx.conditioning.method=='HR_ZONES'",
+        "min": 100,
+        "max": 230
+      },
+      {
+        "key": "conditioning.hr_rest",
+        "type": "number",
+        "required_if": "ctx.conditioning.method=='HR_ZONES' && ctx.conditioning.hr_zone_formula=='KARVONEN_HRR'",
+        "min": 30,
+        "max": 120
+      },
+      {
+        "key": "conditioning.test_1km_time_seconds",
+        "type": "number",
+        "required_if": "ctx.conditioning.method=='PACE' && ctx.athlete.modality=='run'",
+        "min": 120,
+        "max": 1200
+      },
+      {
+        "key": "conditioning.test_5km_time_seconds",
+        "type": "number",
+        "required_if": "ctx.conditioning.method=='PACE' && ctx.athlete.modality=='run'",
+        "min": 900,
+        "max": 3600
+      },
+      {
+        "key": "conditioning.test_2k_row_seconds",
+        "type": "number",
+        "required_if": "ctx.conditioning.method=='PACE' && ctx.athlete.modality=='row'",
+        "min": 360,
+        "max": 1200
+      },
+      {
+        "key": "conditioning.ftp_watts",
+        "type": "number",
+        "required_if": "ctx.conditioning.method=='POWER' && ctx.athlete.modality=='bike'",
+        "min": 50,
+        "max": 600
+      }
+    ]
+  },
+  "exercise_library_ref": {
+    "type": "file",
+    "path": "data/exercise_library_v1.json"
+  },
+  "template": {
+    "weeks": {
+      "min": 4,
+      "max": 4
+    },
+    "days_per_week": {
+      "min": 3,
+      "max": 5
+    },
+    "sessions": [
+      {
+        "day_index": 1,
+        "tags": [
+          "aerobic_base"
+        ],
+        "optional": false,
+        "blocks": [
+          {
+            "id": "z2_main",
+            "type": "conditioning_steady",
+            "tags": [
+              "z2"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "conditioning"
+              ],
+              "prefer_tags": [
+                "run",
+                "row",
+                "bike"
+              ]
+            },
+            "prescription_ref": "rx_z2_steady"
+          }
+        ]
+      },
+      {
+        "day_index": 2,
+        "tags": [
+          "intervals_threshold"
+        ],
+        "optional": false,
+        "blocks": [
+          {
+            "id": "thr",
+            "type": "conditioning_intervals",
+            "tags": [
+              "threshold"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "conditioning"
+              ],
+              "prefer_tags": [
+                "run",
+                "row",
+                "bike"
+              ]
+            },
+            "prescription_ref": "rx_threshold"
+          }
+        ]
+      },
+      {
+        "day_index": 3,
+        "tags": [
+          "aerobic_base"
+        ],
+        "optional": false,
+        "blocks": [
+          {
+            "id": "z2_short",
+            "type": "conditioning_steady",
+            "tags": [
+              "z2"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "conditioning"
+              ],
+              "prefer_tags": [
+                "run",
+                "row",
+                "bike"
+              ]
+            },
+            "prescription_ref": "rx_z2_short"
+          }
+        ]
+      },
+      {
+        "day_index": 4,
+        "tags": [
+          "intervals_vo2_optional"
+        ],
+        "optional": true,
+        "blocks": [
+          {
+            "id": "vo2",
+            "type": "conditioning_intervals",
+            "tags": [
+              "vo2"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "conditioning"
+              ],
+              "prefer_tags": [
+                "run",
+                "row",
+                "bike"
+              ]
+            },
+            "prescription_ref": "rx_vo2"
+          }
+        ]
+      },
+      {
+        "day_index": 5,
+        "tags": [
+          "recovery_optional"
+        ],
+        "optional": true,
+        "blocks": [
+          {
+            "id": "easy",
+            "type": "conditioning_steady",
+            "tags": [
+              "z1"
+            ],
+            "exercise_selector": {
+              "count": 1,
+              "include_tags": [
+                "conditioning"
+              ],
+              "prefer_tags": [
+                "run",
+                "row",
+                "bike"
+              ]
+            },
+            "prescription_ref": "rx_recovery"
+          }
+        ]
+      }
+    ]
+  },
+  "prescriptions": {
+    "rx_z2_steady": {
+      "mode": "steady_state",
+      "output_mapping": {
+        "duration_minutes_expr": "choose(ctx.week,[35,40,45,30])",
+        "intensity_target_expr": "z(2)",
+        "notes_expr": "'Conversational pace / nasal breathing if possible'"
+      }
+    },
+    "rx_z2_short": {
+      "mode": "steady_state",
+      "output_mapping": {
+        "duration_minutes_expr": "choose(ctx.week,[25,30,35,20])",
+        "intensity_target_expr": "z(2)",
+        "notes_expr": "'Easy aerobic maintenance'"
+      }
+    },
+    "rx_threshold": {
+      "mode": "intervals",
+      "output_mapping": {
+        "warmup_minutes_expr": "10",
+        "work_intervals_expr": "choose(ctx.week,[4,5,6,3])",
+        "work_minutes_expr": "choose(ctx.week,[4,4,4,3])",
+        "rest_minutes_expr": "2",
+        "intensity_target_expr": "thr()",
+        "cooldown_minutes_expr": "8",
+        "notes_expr": "'Sustainable hard effort; stop 1 rep before form breaks'"
+      }
+    },
+    "rx_vo2": {
+      "mode": "intervals",
+      "output_mapping": {
+        "warmup_minutes_expr": "10",
+        "work_intervals_expr": "choose(ctx.week,[6,7,8,5])",
+        "work_seconds_expr": "60",
+        "rest_seconds_expr": "90",
+        "intensity_target_expr": "vo2()",
+        "cooldown_minutes_expr": "8",
+        "notes_expr": "'Very hard but controlled; keep repeat quality consistent'"
+      }
+    },
+    "rx_recovery": {
+      "mode": "steady_state",
+      "output_mapping": {
+        "duration_minutes_expr": "20",
+        "intensity_target_expr": "z(1)",
+        "notes_expr": "'Recovery only'"
+      }
+    }
+  },
+  "rules": {
+    "expression_language": "v1",
+    "conditioning_intensity_resolver": {
+      "z(1)": {
+        "HR_ZONES": {
+          "hrr_pct": [
+            0.6,
+            0.7
+          ],
+          "hrmax_pct": [
+            0.6,
+            0.7
+          ]
+        },
+        "PACE": {
+          "pace_factor": [
+            1.2,
+            1.35
+          ]
+        },
+        "POWER": {
+          "ftp_pct": [
+            0.55,
+            0.65
+          ]
+        },
+        "RPE": {
+          "rpe": [
+            2,
+            3
+          ]
+        }
+      },
+      "z(2)": {
+        "HR_ZONES": {
+          "hrr_pct": [
+            0.7,
+            0.8
+          ],
+          "hrmax_pct": [
+            0.7,
+            0.8
+          ]
+        },
+        "PACE": {
+          "pace_factor": [
+            1.1,
+            1.2
+          ]
+        },
+        "POWER": {
+          "ftp_pct": [
+            0.65,
+            0.75
+          ]
+        },
+        "RPE": {
+          "rpe": [
+            3,
+            4
+          ]
+        }
+      },
+      "thr()": {
+        "HR_ZONES": {
+          "hrr_pct": [
+            0.85,
+            0.92
+          ],
+          "hrmax_pct": [
+            0.85,
+            0.92
+          ]
+        },
+        "PACE": {
+          "pace_factor": [
+            0.98,
+            1.05
+          ]
+        },
+        "POWER": {
+          "ftp_pct": [
+            0.88,
+            0.95
+          ]
+        },
+        "RPE": {
+          "rpe": [
+            7,
+            8
+          ]
+        }
+      },
+      "vo2()": {
+        "HR_ZONES": {
+          "hrr_pct": [
+            0.92,
+            0.97
+          ],
+          "hrmax_pct": [
+            0.92,
+            0.97
+          ]
+        },
+        "PACE": {
+          "pace_factor": [
+            0.9,
+            0.98
+          ]
+        },
+        "POWER": {
+          "ftp_pct": [
+            1.05,
+            1.2
+          ]
+        },
+        "RPE": {
+          "rpe": [
+            8,
+            9
+          ]
+        }
+      }
+    }
+  },
+  "validation": {
+    "hard": {
+      "max_intense_minutes_per_week_expr": "choose(ctx.athlete.level, {'novice':30,'intermediate':45,'advanced':60})",
+      "min_z2_minutes_per_week_expr": "choose(ctx.athlete.level, {'novice':60,'intermediate':90,'advanced':120})"
+    },
+    "soft": {
+      "warnings": [
+        {
+          "if_expr": "ctx.plan.weekly_conditioning.z2_minutes < ctx.validation.min_z2",
+          "message": "Z2 minutes below target; consider adding optional recovery day or increasing Z2 duration."
+        }
+      ]
+    },
+    "repair": {
+      "strategy_order": [
+        "drop_optional_blocks",
+        "reduce_interval_repeats"
+      ],
+      "limits": {
+        "max_repairs_per_session": 6,
+        "max_repairs_per_plan": 20
+      }
+    }
+  }
+}
