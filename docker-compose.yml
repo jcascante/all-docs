@@ -1,0 +1,26 @@
+services:
+  backend:
+    build:
+      context: ./apps/backend
+    ports:
+      - "8000:8000"
+    environment:
+      - BACKEND_HOST=0.0.0.0
+      - BACKEND_PORT=8000
+      - DATA_DIR=/data
+      - DEFINITIONS_DIR=/definitions
+      - SCHEMAS_DIR=/schemas
+    volumes:
+      - ./data:/data:ro
+      - ./definitions:/definitions:ro
+      - ./schemas:/schemas:ro
+
+  frontend:
+    build:
+      context: ./apps/frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
