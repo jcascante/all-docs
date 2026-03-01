@@ -1,0 +1,2442 @@
+{
+  "version": "1.0.0",
+  "patterns": [
+    "squat",
+    "hinge",
+    "lunge_unilateral",
+    "horizontal_push",
+    "horizontal_pull",
+    "vertical_push",
+    "vertical_pull",
+    "carry",
+    "core_anti_extension",
+    "core_anti_rotation",
+    "core_flexion",
+    "rotation",
+    "conditioning_steady",
+    "conditioning_intervals"
+  ],
+  "muscles": [
+    "quads",
+    "hamstrings",
+    "glutes",
+    "adductors",
+    "calves",
+    "erectors",
+    "lats",
+    "upper_back",
+    "chest",
+    "delts_anterior",
+    "delts_lateral",
+    "delts_posterior",
+    "biceps",
+    "triceps",
+    "forearms_grip",
+    "abs",
+    "obliques"
+  ],
+  "exercises": [
+    {
+      "id": "back_squat",
+      "name": "Back Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.7,
+        "erectors": 0.4
+      },
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "swap_group": "squat_main",
+      "fatigue_cost": 0.9,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "squat_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "front_squat",
+      "name": "Front Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.5,
+        "erectors": 0.4
+      },
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "swap_group": "squat_main",
+      "fatigue_cost": 0.9,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "squat_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "high_bar_squat",
+      "name": "High Bar Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.6,
+        "erectors": 0.4
+      },
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "swap_group": "squat_main",
+      "fatigue_cost": 0.9,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "squat_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "low_bar_squat",
+      "name": "Low Bar Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 0.85,
+        "glutes": 0.8,
+        "erectors": 0.5
+      },
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "swap_group": "squat_main",
+      "fatigue_cost": 0.92,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "squat_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "paused_back_squat",
+      "name": "Paused Back Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.7,
+        "erectors": 0.45
+      },
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "swap_group": "squat_secondary",
+      "fatigue_cost": 0.85,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "squat_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "tempo_squat",
+      "name": "Tempo Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.7,
+        "erectors": 0.4
+      },
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "swap_group": "squat_secondary",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "squat_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "box_squat",
+      "name": "Box Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 0.9,
+        "glutes": 0.8,
+        "erectors": 0.45
+      },
+      "equipment": [
+        "barbell",
+        "rack",
+        "box"
+      ],
+      "swap_group": "squat_secondary",
+      "fatigue_cost": 0.82,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "squat_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "conventional_deadlift",
+      "name": "Deadlift (Conventional)",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 0.8,
+        "glutes": 0.9,
+        "erectors": 1.0,
+        "forearms_grip": 0.4
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "hinge_main",
+      "fatigue_cost": 1.0,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "hinge_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "sumo_deadlift",
+      "name": "Deadlift (Sumo)",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 0.6,
+        "glutes": 0.9,
+        "adductors": 0.7,
+        "erectors": 0.9,
+        "forearms_grip": 0.35
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "hinge_main",
+      "fatigue_cost": 1.0,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "hinge_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "paused_deadlift",
+      "name": "Paused Deadlift",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 0.75,
+        "glutes": 0.85,
+        "erectors": 1.0,
+        "forearms_grip": 0.4
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "hinge_secondary",
+      "fatigue_cost": 0.9,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "hinge_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "romanian_deadlift_barbell",
+      "name": "Romanian Deadlift (Barbell)",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 1.0,
+        "glutes": 0.8,
+        "erectors": 0.8
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "hinge_secondary",
+      "fatigue_cost": 0.85,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "hinge_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "stiff_leg_deadlift",
+      "name": "Stiff-leg Deadlift",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 1.0,
+        "glutes": 0.7,
+        "erectors": 0.85
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "hinge_secondary",
+      "fatigue_cost": 0.88,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "hinge_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "bench_press",
+      "name": "Bench Press",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 1.0,
+        "triceps": 0.6,
+        "delts_anterior": 0.5
+      },
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "swap_group": "bench_main",
+      "fatigue_cost": 0.85,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "bench_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "paused_bench_press",
+      "name": "Paused Bench Press",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 1.0,
+        "triceps": 0.6,
+        "delts_anterior": 0.5
+      },
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "swap_group": "bench_secondary",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "bench_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "close_grip_bench",
+      "name": "Close Grip Bench Press",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.7,
+        "triceps": 1.0,
+        "delts_anterior": 0.4
+      },
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "swap_group": "bench_secondary",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "bench_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "incline_bench_barbell",
+      "name": "Incline Bench Press (Barbell)",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.85,
+        "delts_anterior": 0.75,
+        "triceps": 0.55
+      },
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "swap_group": "press_secondary",
+      "fatigue_cost": 0.78,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "press_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "overhead_press",
+      "name": "Overhead Press",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "delts_anterior": 0.9,
+        "triceps": 0.6,
+        "upper_back": 0.2
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "ohp_main",
+      "fatigue_cost": 0.85,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "ohp_main",
+        "barbell"
+      ]
+    },
+    {
+      "id": "push_press",
+      "name": "Push Press",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "delts_anterior": 0.9,
+        "triceps": 0.5,
+        "quads": 0.3,
+        "glutes": 0.3
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "ohp_secondary",
+      "fatigue_cost": 0.9,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "ohp_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "barbell_row",
+      "name": "Barbell Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.8,
+        "lats": 0.7,
+        "biceps": 0.5,
+        "erectors": 0.4
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "horizontal_pull_secondary",
+      "fatigue_cost": 0.75,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "horizontal_pull",
+        "barbell",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "pendlay_row",
+      "name": "Pendlay Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.85,
+        "lats": 0.65,
+        "biceps": 0.5,
+        "erectors": 0.45
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "horizontal_pull_secondary",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "horizontal_pull",
+        "barbell",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "chest_supported_row",
+      "name": "Chest-supported Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.8,
+        "lats": 0.7,
+        "biceps": 0.45
+      },
+      "equipment": [
+        "machine",
+        "dumbbells"
+      ],
+      "swap_group": "horizontal_pull_accessory",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_pull",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "weighted_pullup",
+      "name": "Pull-up (Weighted)",
+      "patterns": [
+        "vertical_pull"
+      ],
+      "muscles": {
+        "lats": 0.9,
+        "upper_back": 0.6,
+        "biceps": 0.6,
+        "forearms_grip": 0.4
+      },
+      "equipment": [
+        "pullup_bar",
+        "weight_belt"
+      ],
+      "swap_group": "vertical_pull_secondary",
+      "fatigue_cost": 0.85,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "vertical_pull",
+        "vertical_pull_accessory",
+        "vertical_pull_secondary"
+      ]
+    },
+    {
+      "id": "pullup",
+      "name": "Pull-up",
+      "patterns": [
+        "vertical_pull"
+      ],
+      "muscles": {
+        "lats": 0.9,
+        "upper_back": 0.6,
+        "biceps": 0.6,
+        "forearms_grip": 0.35
+      },
+      "equipment": [
+        "pullup_bar"
+      ],
+      "swap_group": "vertical_pull_secondary",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "vertical_pull",
+        "vertical_pull_accessory",
+        "vertical_pull_secondary"
+      ]
+    },
+    {
+      "id": "chinup",
+      "name": "Chin-up",
+      "patterns": [
+        "vertical_pull"
+      ],
+      "muscles": {
+        "lats": 0.8,
+        "biceps": 0.75,
+        "upper_back": 0.55,
+        "forearms_grip": 0.35
+      },
+      "equipment": [
+        "pullup_bar"
+      ],
+      "swap_group": "vertical_pull_secondary",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "vertical_pull",
+        "vertical_pull_accessory",
+        "vertical_pull_secondary"
+      ]
+    },
+    {
+      "id": "lat_pulldown",
+      "name": "Lat Pulldown",
+      "patterns": [
+        "vertical_pull"
+      ],
+      "muscles": {
+        "lats": 0.85,
+        "upper_back": 0.55,
+        "biceps": 0.55
+      },
+      "equipment": [
+        "cable",
+        "pulldown"
+      ],
+      "swap_group": "vertical_pull_accessory",
+      "fatigue_cost": 0.55,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "vertical_pull",
+        "cable",
+        "vertical_pull_accessory",
+        "vertical_pull_secondary"
+      ]
+    },
+    {
+      "id": "seated_cable_row",
+      "name": "Seated Cable Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.75,
+        "lats": 0.65,
+        "biceps": 0.5
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "horizontal_pull_accessory",
+      "fatigue_cost": 0.55,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_pull",
+        "cable",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "single_arm_db_row",
+      "name": "Single-arm DB Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "lats": 0.75,
+        "upper_back": 0.65,
+        "biceps": 0.45,
+        "forearms_grip": 0.2
+      },
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "swap_group": "horizontal_pull_accessory",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_pull",
+        "dumbbell",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "tbar_row",
+      "name": "T-Bar Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.8,
+        "lats": 0.65,
+        "biceps": 0.45
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "horizontal_pull_accessory",
+      "fatigue_cost": 0.65,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_pull",
+        "machine",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "leg_press",
+      "name": "Leg Press",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.6
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "quads_accessory",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "quads_focus",
+        "machine",
+        "quads_accessory",
+        "quads_isolation"
+      ]
+    },
+    {
+      "id": "hack_squat",
+      "name": "Hack Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.55
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "quads_accessory",
+      "fatigue_cost": 0.75,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "quads_focus",
+        "machine",
+        "quads_accessory",
+        "quads_isolation"
+      ]
+    },
+    {
+      "id": "smith_squat",
+      "name": "Smith Machine Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.6
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "quads_accessory",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "quads_focus",
+        "machine",
+        "quads_accessory",
+        "quads_isolation"
+      ]
+    },
+    {
+      "id": "bulgarian_split_squat",
+      "name": "Bulgarian Split Squat",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "quads": 0.85,
+        "glutes": 0.8,
+        "adductors": 0.3
+      },
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "swap_group": "unilateral_lower",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "lunge_unilateral",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "walking_lunge",
+      "name": "Walking Lunge",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "quads": 0.8,
+        "glutes": 0.7,
+        "adductors": 0.35
+      },
+      "equipment": [
+        "dumbbells"
+      ],
+      "swap_group": "unilateral_lower",
+      "fatigue_cost": 0.75,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "lunge_unilateral",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "reverse_lunge",
+      "name": "Reverse Lunge",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "quads": 0.75,
+        "glutes": 0.75,
+        "adductors": 0.3
+      },
+      "equipment": [
+        "barbell",
+        "dumbbells"
+      ],
+      "swap_group": "unilateral_lower",
+      "fatigue_cost": 0.75,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "lunge_unilateral"
+      ]
+    },
+    {
+      "id": "step_up",
+      "name": "Step-up",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "quads": 0.75,
+        "glutes": 0.8
+      },
+      "equipment": [
+        "dumbbells",
+        "box"
+      ],
+      "swap_group": "unilateral_lower",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "lunge_unilateral"
+      ]
+    },
+    {
+      "id": "leg_extension",
+      "name": "Leg Extension",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "quads_isolation",
+      "fatigue_cost": 0.45,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "quads_focus",
+        "isolation",
+        "machine",
+        "quads_accessory",
+        "quads_isolation"
+      ]
+    },
+    {
+      "id": "seated_leg_curl",
+      "name": "Seated Leg Curl",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 1.0
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "hamstrings_isolation",
+      "fatigue_cost": 0.45,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "hamstrings_focus",
+        "isolation",
+        "machine",
+        "hamstrings_accessory",
+        "hamstrings_isolation"
+      ]
+    },
+    {
+      "id": "lying_leg_curl",
+      "name": "Lying Leg Curl",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 1.0
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "hamstrings_isolation",
+      "fatigue_cost": 0.5,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "hamstrings_focus",
+        "isolation",
+        "machine",
+        "hamstrings_accessory",
+        "hamstrings_isolation"
+      ]
+    },
+    {
+      "id": "glute_ham_raise",
+      "name": "Glute-Ham Raise",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 1.0,
+        "glutes": 0.4
+      },
+      "equipment": [
+        "ghr"
+      ],
+      "swap_group": "hamstrings_accessory",
+      "fatigue_cost": 0.75,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "hamstrings_focus",
+        "hamstrings_accessory",
+        "hamstrings_isolation"
+      ]
+    },
+    {
+      "id": "hip_thrust",
+      "name": "Hip Thrust",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "glutes": 1.0,
+        "hamstrings": 0.4
+      },
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "swap_group": "glutes_accessory",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "glutes_focus",
+        "barbell"
+      ]
+    },
+    {
+      "id": "glute_bridge",
+      "name": "Glute Bridge",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "glutes": 1.0,
+        "hamstrings": 0.3
+      },
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "swap_group": "glutes_accessory",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "glutes_focus",
+        "barbell"
+      ]
+    },
+    {
+      "id": "back_extension",
+      "name": "Back Extension",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "erectors": 0.8,
+        "glutes": 0.4,
+        "hamstrings": 0.4
+      },
+      "equipment": [
+        "back_extension_bench"
+      ],
+      "swap_group": "erectors_accessory",
+      "fatigue_cost": 0.55,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "erectors_focus"
+      ]
+    },
+    {
+      "id": "good_morning",
+      "name": "Good Morning",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 0.8,
+        "glutes": 0.7,
+        "erectors": 0.9
+      },
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "swap_group": "hinge_secondary",
+      "fatigue_cost": 0.9,
+      "contraindications": [
+        "low_back_sensitive"
+      ],
+      "tags": [
+        "secondary",
+        "hinge_secondary",
+        "barbell"
+      ]
+    },
+    {
+      "id": "standing_calf_raise",
+      "name": "Standing Calf Raise",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "calves": 1.0
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "calves_isolation",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "calves_focus",
+        "isolation",
+        "machine",
+        "calves_isolation"
+      ]
+    },
+    {
+      "id": "seated_calf_raise",
+      "name": "Seated Calf Raise",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "calves": 1.0
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "calves_isolation",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "calves_focus",
+        "isolation",
+        "machine",
+        "calves_isolation"
+      ]
+    },
+    {
+      "id": "db_bench_press",
+      "name": "DB Bench Press",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.9,
+        "triceps": 0.45,
+        "delts_anterior": 0.45
+      },
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "swap_group": "horizontal_push_accessory",
+      "fatigue_cost": 0.65,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_push",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "incline_db_press",
+      "name": "Incline DB Press",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.75,
+        "delts_anterior": 0.65,
+        "triceps": 0.4
+      },
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "swap_group": "horizontal_push_accessory",
+      "fatigue_cost": 0.65,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_push",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "machine_chest_press",
+      "name": "Machine Chest Press",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.9,
+        "triceps": 0.4,
+        "delts_anterior": 0.4
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "horizontal_push_accessory",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_push",
+        "machine"
+      ]
+    },
+    {
+      "id": "dips",
+      "name": "Dips",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.7,
+        "triceps": 0.9,
+        "delts_anterior": 0.4
+      },
+      "equipment": [
+        "dip_bars"
+      ],
+      "swap_group": "horizontal_push_accessory",
+      "fatigue_cost": 0.8,
+      "contraindications": [
+        "shoulder_sensitive"
+      ],
+      "tags": [
+        "accessory",
+        "horizontal_push"
+      ]
+    },
+    {
+      "id": "cable_fly",
+      "name": "Cable Fly",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 1.0
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "chest_isolation",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "chest_focus",
+        "isolation",
+        "cable"
+      ]
+    },
+    {
+      "id": "pec_deck",
+      "name": "Pec Deck",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 1.0
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "chest_isolation",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "chest_focus",
+        "isolation",
+        "machine"
+      ]
+    },
+    {
+      "id": "lateral_raise",
+      "name": "Lateral Raise",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "delts_lateral": 1.0
+      },
+      "equipment": [
+        "dumbbells"
+      ],
+      "swap_group": "delts_lateral_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "delts_lateral",
+        "isolation",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "cable_lateral_raise",
+      "name": "Cable Lateral Raise",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "delts_lateral": 1.0
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "delts_lateral_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "delts_lateral",
+        "isolation",
+        "cable"
+      ]
+    },
+    {
+      "id": "rear_delt_fly",
+      "name": "Rear Delt Fly",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "delts_posterior": 1.0,
+        "upper_back": 0.3
+      },
+      "equipment": [
+        "dumbbells"
+      ],
+      "swap_group": "delts_posterior_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "delts_posterior",
+        "isolation",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "reverse_pec_deck",
+      "name": "Reverse Pec Deck",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "delts_posterior": 1.0,
+        "upper_back": 0.35
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "delts_posterior_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "delts_posterior",
+        "isolation",
+        "machine"
+      ]
+    },
+    {
+      "id": "face_pull",
+      "name": "Face Pull",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.6,
+        "delts_posterior": 0.7
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "upper_back_accessory",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "upper_back",
+        "cable"
+      ]
+    },
+    {
+      "id": "triceps_pushdown",
+      "name": "Triceps Pushdown",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "triceps": 1.0
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "triceps_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "triceps",
+        "isolation",
+        "cable"
+      ]
+    },
+    {
+      "id": "overhead_triceps_extension",
+      "name": "Overhead Triceps Extension",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "triceps": 1.0
+      },
+      "equipment": [
+        "dumbbells",
+        "cable"
+      ],
+      "swap_group": "triceps_isolation",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "triceps",
+        "isolation"
+      ]
+    },
+    {
+      "id": "skullcrusher",
+      "name": "Skullcrusher",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "triceps": 1.0
+      },
+      "equipment": [
+        "barbell",
+        "bench"
+      ],
+      "swap_group": "triceps_isolation",
+      "fatigue_cost": 0.4,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "triceps",
+        "isolation",
+        "barbell"
+      ]
+    },
+    {
+      "id": "cable_row_neutral",
+      "name": "Cable Row (Neutral)",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.75,
+        "lats": 0.65,
+        "biceps": 0.45
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "horizontal_pull_accessory",
+      "fatigue_cost": 0.55,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_pull",
+        "cable",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "machine_row",
+      "name": "Machine Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.8,
+        "lats": 0.6,
+        "biceps": 0.4
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "horizontal_pull_accessory",
+      "fatigue_cost": 0.55,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_pull",
+        "machine",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "straight_arm_pulldown",
+      "name": "Straight-arm Pulldown",
+      "patterns": [
+        "vertical_pull"
+      ],
+      "muscles": {
+        "lats": 1.0
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "lats_isolation",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "lats",
+        "isolation",
+        "cable"
+      ]
+    },
+    {
+      "id": "biceps_curl_db",
+      "name": "DB Curl",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "biceps": 1.0
+      },
+      "equipment": [
+        "dumbbells"
+      ],
+      "swap_group": "biceps_isolation",
+      "fatigue_cost": 0.25,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "biceps",
+        "isolation",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "incline_db_curl",
+      "name": "Incline DB Curl",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "biceps": 1.0
+      },
+      "equipment": [
+        "dumbbells",
+        "bench"
+      ],
+      "swap_group": "biceps_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "biceps",
+        "isolation",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "hammer_curl",
+      "name": "Hammer Curl",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "biceps": 0.7,
+        "forearms_grip": 0.6
+      },
+      "equipment": [
+        "dumbbells"
+      ],
+      "swap_group": "biceps_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "biceps",
+        "forearms_grip",
+        "isolation",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "cable_curl",
+      "name": "Cable Curl",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "biceps": 1.0
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "biceps_isolation",
+      "fatigue_cost": 0.25,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "biceps",
+        "isolation",
+        "cable"
+      ]
+    },
+    {
+      "id": "ez_bar_curl",
+      "name": "EZ-bar Curl",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "biceps": 1.0,
+        "forearms_grip": 0.2
+      },
+      "equipment": [
+        "barbell"
+      ],
+      "swap_group": "biceps_isolation",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "biceps",
+        "isolation",
+        "barbell"
+      ]
+    },
+    {
+      "id": "shrug",
+      "name": "Shrug",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.8,
+        "forearms_grip": 0.3
+      },
+      "equipment": [
+        "dumbbells",
+        "barbell"
+      ],
+      "swap_group": "upper_back_accessory",
+      "fatigue_cost": 0.45,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "upper_back",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "farmer_carry",
+      "name": "Farmer Carry",
+      "patterns": [
+        "carry"
+      ],
+      "muscles": {
+        "forearms_grip": 1.0,
+        "upper_back": 0.3,
+        "abs": 0.2
+      },
+      "equipment": [
+        "dumbbells",
+        "kettlebells"
+      ],
+      "swap_group": "carry",
+      "fatigue_cost": 0.55,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "carry"
+      ]
+    },
+    {
+      "id": "suitcase_carry",
+      "name": "Suitcase Carry",
+      "patterns": [
+        "carry"
+      ],
+      "muscles": {
+        "forearms_grip": 1.0,
+        "obliques": 0.5,
+        "upper_back": 0.2
+      },
+      "equipment": [
+        "dumbbells",
+        "kettlebells"
+      ],
+      "swap_group": "carry",
+      "fatigue_cost": 0.5,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "carry"
+      ]
+    },
+    {
+      "id": "plank",
+      "name": "Plank",
+      "patterns": [
+        "core_anti_extension"
+      ],
+      "muscles": {
+        "abs": 0.8,
+        "obliques": 0.4
+      },
+      "equipment": [],
+      "swap_group": "core_anti_extension",
+      "fatigue_cost": 0.2,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core"
+      ]
+    },
+    {
+      "id": "dead_bug",
+      "name": "Dead Bug",
+      "patterns": [
+        "core_anti_extension"
+      ],
+      "muscles": {
+        "abs": 0.6,
+        "obliques": 0.3
+      },
+      "equipment": [],
+      "swap_group": "core_anti_extension",
+      "fatigue_cost": 0.2,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core"
+      ]
+    },
+    {
+      "id": "hanging_leg_raise",
+      "name": "Hanging Leg Raise",
+      "patterns": [
+        "core_flexion"
+      ],
+      "muscles": {
+        "abs": 0.9,
+        "obliques": 0.3
+      },
+      "equipment": [
+        "pullup_bar"
+      ],
+      "swap_group": "core_flexion",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core"
+      ]
+    },
+    {
+      "id": "cable_crunch",
+      "name": "Cable Crunch",
+      "patterns": [
+        "core_flexion"
+      ],
+      "muscles": {
+        "abs": 1.0
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "core_flexion",
+      "fatigue_cost": 0.3,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core",
+        "cable"
+      ]
+    },
+    {
+      "id": "pallof_press",
+      "name": "Pallof Press",
+      "patterns": [
+        "core_anti_rotation"
+      ],
+      "muscles": {
+        "obliques": 0.8,
+        "abs": 0.4
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "core_anti_rotation",
+      "fatigue_cost": 0.2,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core",
+        "cable"
+      ]
+    },
+    {
+      "id": "ab_wheel",
+      "name": "Ab Wheel",
+      "patterns": [
+        "core_anti_extension"
+      ],
+      "muscles": {
+        "abs": 1.0,
+        "obliques": 0.3
+      },
+      "equipment": [
+        "ab_wheel"
+      ],
+      "swap_group": "core_anti_extension",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core"
+      ]
+    },
+    {
+      "id": "run_steady",
+      "name": "Run Steady",
+      "patterns": [
+        "conditioning_steady"
+      ],
+      "muscles": {},
+      "equipment": [],
+      "swap_group": "run_modality",
+      "fatigue_cost": 0.4,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "run"
+      ]
+    },
+    {
+      "id": "run_intervals",
+      "name": "Run Intervals",
+      "patterns": [
+        "conditioning_intervals"
+      ],
+      "muscles": {},
+      "equipment": [],
+      "swap_group": "run_modality",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "run"
+      ]
+    },
+    {
+      "id": "row_erg_steady",
+      "name": "Row Erg Steady",
+      "patterns": [
+        "conditioning_steady"
+      ],
+      "muscles": {},
+      "equipment": [
+        "erg_row"
+      ],
+      "swap_group": "row_modality",
+      "fatigue_cost": 0.45,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "row"
+      ]
+    },
+    {
+      "id": "row_erg_intervals",
+      "name": "Row Erg Intervals",
+      "patterns": [
+        "conditioning_intervals"
+      ],
+      "muscles": {},
+      "equipment": [
+        "erg_row"
+      ],
+      "swap_group": "row_modality",
+      "fatigue_cost": 0.75,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "row"
+      ]
+    },
+    {
+      "id": "bike_steady",
+      "name": "Bike Steady",
+      "patterns": [
+        "conditioning_steady"
+      ],
+      "muscles": {},
+      "equipment": [
+        "bike"
+      ],
+      "swap_group": "bike_modality",
+      "fatigue_cost": 0.4,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "bike"
+      ]
+    },
+    {
+      "id": "bike_intervals",
+      "name": "Bike Intervals",
+      "patterns": [
+        "conditioning_intervals"
+      ],
+      "muscles": {},
+      "equipment": [
+        "bike"
+      ],
+      "swap_group": "bike_modality",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "bike"
+      ]
+    },
+    {
+      "id": "assault_bike_intervals",
+      "name": "Assault Bike Intervals",
+      "patterns": [
+        "conditioning_intervals"
+      ],
+      "muscles": {},
+      "equipment": [
+        "assault_bike"
+      ],
+      "swap_group": "bike_modality",
+      "fatigue_cost": 0.8,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "bike"
+      ]
+    },
+    {
+      "id": "jump_rope_intervals",
+      "name": "Jump Rope Intervals",
+      "patterns": [
+        "conditioning_intervals"
+      ],
+      "muscles": {},
+      "equipment": [
+        "jump_rope"
+      ],
+      "swap_group": "mixed_modality",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "mixed"
+      ]
+    },
+    {
+      "id": "sled_push_intervals",
+      "name": "Sled Push Intervals",
+      "patterns": [
+        "conditioning_intervals"
+      ],
+      "muscles": {},
+      "equipment": [
+        "sled"
+      ],
+      "swap_group": "mixed_modality",
+      "fatigue_cost": 0.85,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "mixed"
+      ]
+    },
+    {
+      "id": "incline_machine_press",
+      "name": "Incline Machine Press",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.75,
+        "delts_anterior": 0.65,
+        "triceps": 0.45
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "horizontal_push_accessory",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_push",
+        "machine"
+      ]
+    },
+    {
+      "id": "pushup",
+      "name": "Push-up",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "chest": 0.7,
+        "triceps": 0.4,
+        "delts_anterior": 0.35
+      },
+      "equipment": [],
+      "swap_group": "horizontal_push_accessory",
+      "fatigue_cost": 0.5,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_push",
+        "bodyweight"
+      ]
+    },
+    {
+      "id": "cable_triceps_kickback",
+      "name": "Cable Triceps Kickback",
+      "patterns": [
+        "horizontal_push"
+      ],
+      "muscles": {
+        "triceps": 1.0
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "triceps_isolation",
+      "fatigue_cost": 0.25,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "triceps",
+        "isolation",
+        "cable"
+      ]
+    },
+    {
+      "id": "db_shoulder_press",
+      "name": "DB Shoulder Press",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "delts_anterior": 0.85,
+        "triceps": 0.5
+      },
+      "equipment": [
+        "dumbbells"
+      ],
+      "swap_group": "ohp_secondary",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "vertical_push",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "machine_shoulder_press",
+      "name": "Machine Shoulder Press",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "delts_anterior": 0.85,
+        "triceps": 0.5
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "ohp_secondary",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "vertical_push",
+        "machine"
+      ]
+    },
+    {
+      "id": "upright_row",
+      "name": "Upright Row",
+      "patterns": [
+        "vertical_pull"
+      ],
+      "muscles": {
+        "delts_lateral": 0.6,
+        "upper_back": 0.6,
+        "biceps": 0.3
+      },
+      "equipment": [
+        "cable",
+        "barbell"
+      ],
+      "swap_group": "upper_back_accessory",
+      "fatigue_cost": 0.55,
+      "contraindications": [
+        "shoulder_sensitive"
+      ],
+      "tags": [
+        "accessory",
+        "upper_back"
+      ]
+    },
+    {
+      "id": "hip_abduction_machine",
+      "name": "Hip Abduction Machine",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "glutes": 0.7,
+        "adductors": 0.4
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "glutes_accessory",
+      "fatigue_cost": 0.25,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "glutes_focus",
+        "machine"
+      ]
+    },
+    {
+      "id": "adductor_machine",
+      "name": "Adductor Machine",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "adductors": 1.0
+      },
+      "equipment": [
+        "machine"
+      ],
+      "swap_group": "adductors_isolation",
+      "fatigue_cost": 0.25,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "adductors",
+        "isolation",
+        "machine"
+      ]
+    },
+    {
+      "id": "glute_med_band_walk",
+      "name": "Band Lateral Walk",
+      "patterns": [
+        "lunge_unilateral"
+      ],
+      "muscles": {
+        "glutes": 0.6,
+        "adductors": 0.2
+      },
+      "equipment": [
+        "bands"
+      ],
+      "swap_group": "glutes_accessory",
+      "fatigue_cost": 0.2,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "glutes_focus",
+        "prehab"
+      ]
+    },
+    {
+      "id": "copenhagen_plank",
+      "name": "Copenhagen Plank",
+      "patterns": [
+        "core_anti_rotation"
+      ],
+      "muscles": {
+        "adductors": 0.8,
+        "obliques": 0.6
+      },
+      "equipment": [],
+      "swap_group": "core_anti_rotation",
+      "fatigue_cost": 0.35,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core",
+        "adductors"
+      ]
+    },
+    {
+      "id": "russian_twist",
+      "name": "Russian Twist",
+      "patterns": [
+        "rotation"
+      ],
+      "muscles": {
+        "obliques": 1.0,
+        "abs": 0.4
+      },
+      "equipment": [
+        "medicine_ball"
+      ],
+      "swap_group": "rotation",
+      "fatigue_cost": 0.25,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "core"
+      ]
+    },
+    {
+      "id": "landmine_press",
+      "name": "Landmine Press",
+      "patterns": [
+        "vertical_push"
+      ],
+      "muscles": {
+        "delts_anterior": 0.7,
+        "chest": 0.4,
+        "triceps": 0.4
+      },
+      "equipment": [
+        "landmine"
+      ],
+      "swap_group": "press_secondary",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "vertical_push"
+      ]
+    },
+    {
+      "id": "landmine_row",
+      "name": "Landmine Row",
+      "patterns": [
+        "horizontal_pull"
+      ],
+      "muscles": {
+        "upper_back": 0.7,
+        "lats": 0.6,
+        "biceps": 0.4
+      },
+      "equipment": [
+        "landmine"
+      ],
+      "swap_group": "horizontal_pull_accessory",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "horizontal_pull",
+        "horizontal_pull_accessory",
+        "horizontal_pull_secondary"
+      ]
+    },
+    {
+      "id": "trap_bar_deadlift",
+      "name": "Trap Bar Deadlift",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "quads": 0.6,
+        "glutes": 0.8,
+        "hamstrings": 0.7,
+        "erectors": 0.7,
+        "forearms_grip": 0.35
+      },
+      "equipment": [
+        "trap_bar"
+      ],
+      "swap_group": "hinge_main",
+      "fatigue_cost": 0.95,
+      "contraindications": [],
+      "tags": [
+        "main",
+        "hinge_main"
+      ]
+    },
+    {
+      "id": "belt_squat",
+      "name": "Belt Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 1.0,
+        "glutes": 0.5
+      },
+      "equipment": [
+        "belt_squat_machine"
+      ],
+      "swap_group": "quads_accessory",
+      "fatigue_cost": 0.65,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "quads_focus",
+        "machine",
+        "quads_accessory",
+        "quads_isolation"
+      ]
+    },
+    {
+      "id": "goblet_squat",
+      "name": "Goblet Squat",
+      "patterns": [
+        "squat"
+      ],
+      "muscles": {
+        "quads": 0.9,
+        "glutes": 0.6
+      },
+      "equipment": [
+        "dumbbells",
+        "kettlebells"
+      ],
+      "swap_group": "squat_secondary",
+      "fatigue_cost": 0.6,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "squat_secondary",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "db_rdl",
+      "name": "Romanian Deadlift (DB)",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "hamstrings": 0.95,
+        "glutes": 0.7,
+        "erectors": 0.5
+      },
+      "equipment": [
+        "dumbbells"
+      ],
+      "swap_group": "hinge_secondary",
+      "fatigue_cost": 0.7,
+      "contraindications": [],
+      "tags": [
+        "secondary",
+        "hinge_secondary",
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "cable_pullthrough",
+      "name": "Cable Pull-through",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "glutes": 0.9,
+        "hamstrings": 0.5
+      },
+      "equipment": [
+        "cable"
+      ],
+      "swap_group": "glutes_accessory",
+      "fatigue_cost": 0.45,
+      "contraindications": [],
+      "tags": [
+        "accessory",
+        "glutes_focus",
+        "cable"
+      ]
+    },
+    {
+      "id": "hip_hinge_kettlebell_swing",
+      "name": "Kettlebell Swing",
+      "patterns": [
+        "hinge"
+      ],
+      "muscles": {
+        "glutes": 0.8,
+        "hamstrings": 0.6,
+        "abs": 0.2
+      },
+      "equipment": [
+        "kettlebells"
+      ],
+      "swap_group": "conditioning_intervals",
+      "fatigue_cost": 0.65,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "mixed"
+      ]
+    },
+    {
+      "id": "battle_ropes_intervals",
+      "name": "Battle Ropes Intervals",
+      "patterns": [
+        "conditioning_intervals"
+      ],
+      "muscles": {},
+      "equipment": [
+        "battle_ropes"
+      ],
+      "swap_group": "mixed_modality",
+      "fatigue_cost": 0.75,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "mixed"
+      ]
+    },
+    {
+      "id": "airbike_steady",
+      "name": "Assault Bike Steady",
+      "patterns": [
+        "conditioning_steady"
+      ],
+      "muscles": {},
+      "equipment": [
+        "assault_bike"
+      ],
+      "swap_group": "bike_modality",
+      "fatigue_cost": 0.5,
+      "contraindications": [],
+      "tags": [
+        "conditioning",
+        "bike"
+      ]
+    }
+  ]
+}
