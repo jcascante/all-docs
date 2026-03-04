@@ -106,6 +106,27 @@ export interface ProgramDefinitionSummary {
   description: string | null;
 }
 
+export interface ParameterField {
+  key: string;
+  type: "number" | "string" | "enum" | "boolean" | "string_array" | "number_array" | "object";
+  required?: boolean;
+  required_if?: string;
+  visible_if?: string;
+  default_expr?: string;
+  min?: number;
+  max?: number;
+  enum?: string[];
+  description?: string;
+}
+
+export interface ProgramDefinitionFull extends ProgramDefinitionSummary {
+  parameter_spec: { fields: ParameterField[] };
+  template: {
+    weeks: { min: number; max: number };
+    days_per_week: { min: number; max: number };
+  };
+}
+
 export interface Athlete {
   level: string;
   time_budget_minutes: number;

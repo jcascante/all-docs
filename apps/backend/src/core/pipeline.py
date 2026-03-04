@@ -23,8 +23,10 @@ from src.core.selector.exercise_selector import (
     ExerciseSelector as ExSelector,
 )
 
+from src.models.enums import ExerciseLibraryRefType
+from src.models.exercise_library import ExerciseLibrary
+
 if TYPE_CHECKING:
-    from src.models.exercise_library import ExerciseLibrary
     from src.models.plan_request import PlanRequest
     from src.models.program_definition import ProgramDefinition
 
@@ -35,12 +37,28 @@ class Pipeline:
         library: ExerciseLibrary,
         definition: ProgramDefinition,
     ) -> None:
-        self._library = library
         self._definition = definition
         self._evaluator = ExpressionEvaluator()
-        self._selector = ExSelector(library)
         self._prescription = PrescriptionResolver()
         self._metrics = MetricsEngine()
+
+        ref = definition.exercise_library_ref
+        if (
+            ref is not None
+            and ref.type == ExerciseLibraryRefType.EMBEDDED
+            and ref.exercises
+        ):
+            effective_library = ExerciseLibrary(
+                version="embedded",
+                patterns=[],
+                muscles=[],
+                exercises=ref.exercises,
+            )
+        else:
+            effective_library = library
+
+        self._library = effective_library
+        self._selector = ExSelector(effective_library)
 
     def generate(self, request: PlanRequest) -> dict[str, Any]:
         ctx = self._build_context(request)
@@ -95,6 +113,9 @@ class Pipeline:
             )
 
             for block_def in session_def.blocks:
+                # Main lifts must repeat across sessions; skip dedup for them
+                is_main_lift = block_def.type == "main_lift"
+                skip_dedup = is_conditioning or is_main_lift
                 exercises = self._selector.select(
                     count=block_def.exercise_selector.count,
                     include_tags=block_def.exercise_selector.include_tags,
@@ -107,11 +128,11 @@ class Pipeline:
                     athlete_equipment=ctx["athlete"].get("equipment", []),
                     restrictions=ctx["athlete"].get("restrictions", []),
                     already_used_ids=(
-                        set() if is_conditioning else used_ids_strength
+                        set() if skip_dedup else used_ids_strength
                     ),
                     already_used_swap_groups=(
                         set()
-                        if is_conditioning
+                        if skip_dedup
                         else used_swap_groups_strength
                     ),
                     seed=request.seed,

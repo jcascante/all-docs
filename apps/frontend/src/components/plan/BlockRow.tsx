@@ -43,14 +43,14 @@ export function BlockRow({ block }: BlockRowProps) {
         {isStrengthPrescription(rx) && (
           <span data-testid="strength-rx" className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="flex items-center gap-1">
-              <span className="font-mono text-xs text-indigo-600 dark:text-indigo-400">TOP</span>
-              {rx.top_set.reps}&times;{rx.top_set.sets} @ {formatLoad(rx.top_set.load_kg)}
+              <span className="font-mono text-xs text-indigo-600 dark:text-indigo-400">Top set</span>
+              {rx.top_set.sets} sets &times; {rx.top_set.reps} reps @ {formatLoad(rx.top_set.load_kg)}
               <span className="opacity-60">RPE {rx.top_set.target_rpe}</span>
             </span>
             {rx.backoff.length > 0 && (
               <span className="flex items-center gap-1">
-                <span className="font-mono text-xs text-gray-400 dark:text-slate-500">BO</span>
-                {rx.backoff[0].reps}&times;{rx.backoff[0].sets} @ {formatLoad(rx.backoff[0].load_kg)}
+                <span className="font-mono text-xs text-gray-400 dark:text-slate-500">Backoff</span>
+                {rx.backoff[0].sets} sets &times; {rx.backoff[0].reps} reps @ {formatLoad(rx.backoff[0].load_kg)}
               </span>
             )}
           </span>

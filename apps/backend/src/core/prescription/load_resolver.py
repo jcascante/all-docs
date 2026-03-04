@@ -47,6 +47,7 @@ ROUNDING_PROFILES: dict[str, float | None] = {
     "none": None,
     "plate_2p5kg": 2.5,
     "db_2kg": 2.0,
+    "kb_4kg": 4.0,
 }
 
 

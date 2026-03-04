@@ -2,6 +2,7 @@ import type {
   GeneratedPlan,
   PlanRequest,
   ProgramDefinitionSummary,
+  ProgramDefinitionFull,
 } from "./types";
 
 const BASE_URL =
@@ -45,7 +46,7 @@ export async function listProgramDefinitions() {
 }
 
 export async function getProgramDefinition(programId: string) {
-  return fetchJSON<Record<string, unknown>>(
+  return fetchJSON<ProgramDefinitionFull>(
     `/api/v1/program-definitions/${programId}`
   );
 }

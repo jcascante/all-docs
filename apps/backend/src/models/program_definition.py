@@ -3,6 +3,7 @@ from typing import Any
 from pydantic import BaseModel, Field
 
 from src.models.enums import BlockType, ExerciseLibraryRefType, ParameterFieldType
+from src.models.exercise_library import Exercise
 
 
 class ParameterField(BaseModel):
@@ -29,6 +30,7 @@ class ParameterSpec(BaseModel):
 class ExerciseLibraryRef(BaseModel):
     type: ExerciseLibraryRefType
     path: str
+    exercises: list[Exercise] = Field(default_factory=list)
 
     model_config = {"extra": "allow"}
 

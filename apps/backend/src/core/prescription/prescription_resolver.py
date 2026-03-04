@@ -49,6 +49,7 @@ class PrescriptionResolver:
         ctx: dict[str, Any],
         e1rm_key: str | None,
     ) -> dict[str, Any]:
+        sets = int(self._eval(mapping["sets_expr"], ctx)) if "sets_expr" in mapping else 1
         reps = int(self._eval(mapping["reps_expr"], ctx))
         target_rpe = float(self._eval(mapping["target_rpe_expr"], ctx))
         backoff_sets = int(self._eval(mapping["backoff_sets_expr"], ctx))
@@ -68,7 +69,7 @@ class PrescriptionResolver:
 
         return {
             "top_set": {
-                "sets": 1,
+                "sets": sets,
                 "reps": reps,
                 "target_rpe": target_rpe,
                 "load_kg": top_load,
